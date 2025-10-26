@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Game Pulse</title>
+        <meta name="viewport" content="width=device-width">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="main.css">
+        <link rel="icon" type="logo" sizes="32x32" href="favicon.png">
+    </head>
+    <body>
+        <div id="body">
+           <p><img src="1.png" alt="logo"></p>
+            </div>
+            <div class="navbar">
+
+  <div class="dropdown">
+  <button class="dropbtn" onclick="myFunction()" style="margin-left: 250px;">&#9776 Menu
+    <i class="fa fa-caret-down"></i>
+  </button>
+  <div class="dropdown-content" id="myDropdown" style="margin-left: 250px;">
+    <a href="#news">News</a>
+    <a href="#platforms">Platforms</a>
+    <a href="#releasedates">Release Dates</a>
+    <a href="#genre">Genre</a>
+  </div>
+</div>
+  <a href="#home">Home</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+            </div>
+<!-- post entry -->
+    <div class="post">
+  <div class="column" style="flex-grow: 0; background-color: #e2e2e2; border: #000; border-style: solid;">
+    <h2><img src="picture/cod.avif" alt="CoD Black Ops 7" width="80%" height="auto"></h2>
+    <h2 style="font-weight: 800;">Call Of Duty: Black Ops 7</h2>
+
+  </div>
+  
+  <div class="column" style="color: #000; flex-grow: 1;">
+    <p style="background-color: #25ba25; font-size: 40px"><b>Call of Duty: Black Ops 7 is making a comeback of franchise favorite maps</b></p>
+    <p style="color: #e2e2e2; font-size: 20px; font-weight: 500; background-color: #25ba2567;">
+      <b>It was recently announced that fan-favorite map 'Nuketown' will be making a reappearance in the next release for Call of Duty: Black Ops 7 this upcoming Novermber 14th.
+      The game will be released on Playstation 4 and 5, Xbox One, Xbox series X/S, and PC. The map Nuketown was first released in Call of Duty: Black ops, or the first instalment of the Black Ops series. 
+      Many long term fans are excited to see this map being pulled out of retirement so they can experience some nostalgia with this beloved map.
+    </b></p>
+  </div>
+    </div>
+
+    <div class="post2">
+  <div class="column" style="flex-grow: 0; background-color: #e2e2e2; border: #000; border-style: solid;">
+    <h2><img src="picture/halo.avif" alt="Halo" width="80%" height="auto"></h2>
+    <h2 style="font-weight: 800;">Halo</h2>
+
+  </div>
+  
+  <div class="column1" style=" color: #000; flex-grow: 1;">
+    <p style="background-color: #25ba25; font-size: 40px;"><b>Halo 1 is getting an official remake and coming to PS5</b></p>
+    <p style="color: #e2e2e2; font-size: 20px; font-weight: 500; background-color: #25ba2567;">
+      <b>It is finally Halo's turn to get its long awaited first game remake. But there will be some changes that hadn't sat well with the community. With the new remake, there will not include online PVP multiplayer modes, aside from in game campaign co-op.
+        There is no set release date for Halo: Campaign Evolved but the window is set till the end of 2026. The game however will be making its appearance as a Playstation title after years of rivalry between Microsoft and Sony. The game is said to be released for Pc,
+        Xbox, and PS5.
+    </b></p>
+  </div>
+    </div>
+
+    <div id="choose">
+    <h1>Do You Love Video Games?</h1>
+    <p><b style="margin-right: 50px;">YES</b><b style="margin-left: 240px;">NO</b></p>
+<div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div>
+<div id="div2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"></div>
+<img id="img1" src="picture/ilg.png" draggable="true" ondragstart="dragstartHandler(event)" width="208" height="201">
+  </div>
+</div>
+        <script>
+          /* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+
+function dragstartHandler(ev) {
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function dragoverHandler(ev) {
+  ev.preventDefault();
+}
+
+function dropHandler(ev) {
+  ev.preventDefault();
+  const data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+</script>
+    </body>
+</html>
