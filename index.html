@@ -57,11 +57,17 @@
 </div>
     <div id="choose">
     <h1>Do You Love Video Games?</h1>
-    <img id="img1" src="picture/ilg.png" draggable="true" ondragstart="dragstartHandler(event)" width="208" height="201">
+    <img id="img1" src="picture/ilg.png" draggable="true" ondragstart="dragstartHandler(event)">
     <br>
 <div id="div1" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"><b>YES</b></div>
 <div id="div2" ondrop="dropHandler(event)"   ondragover="dragoverHandler(event)"><b>NO</b></div>
   </div>
+
+    <button onclick="clickCounter()" type="button">  <p class="click">Click me!</p></button>
+  <p class="click"></p>
+<div id="result">
+<p>Click to see how many times you've clicked me!</p>
+</div>
 </div>
         <script>
           /* When the user clicks on the button, 
@@ -92,6 +98,20 @@ function dropHandler(ev) {
   ev.preventDefault();
   const data = ev.dataTransfer.getData("text");
   ev.target.appendChild(document.getElementById(data));
+}
+
+function clickCounter() {
+  const x = document.getElementById("result");
+  if (typeof(Storage) !== "undefined") {
+    if (sessionStorage.clickcount) {
+      sessionStorage.clickcount = Number(sessionStorage.clickcount)+1;
+    } else {
+      sessionStorage.clickcount = 1;
+    }
+    x.innerHTML = "You have clicked the button " + sessionStorage.clickcount + " time(s) in this session!";
+  } else {
+    x.innerHTML = "Sorry, no Web storage support!";
+  }
 }
 </script>
     </body>
