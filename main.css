@@ -180,9 +180,9 @@ body {
 }
 
 @media (max-width: 900px) {
-  #img1{
-    width: 108;
-    height: 101;
+  #choose{
+  width: 250px;
+  height: 500px;
   }
 }
 
